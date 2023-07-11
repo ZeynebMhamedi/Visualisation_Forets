@@ -1,0 +1,132 @@
+body {
+  background-color: white;
+}
+
+.axis-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.group-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: black;
+}
+
+.node.toggled circle {
+  fill: yellow;
+}
+
+.link {
+  stroke-width: 1.5px;
+}
+
+.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 5px;
+  font: 12px sans-serif;
+  background: lightsteelblue;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.node.high-accuracy circle {
+  fill: red;
+}
+
+.node.medium-accuracy circle {
+  fill: blue;
+}
+
+.node.low-accuracy circle {
+  fill: gray;
+}
+
+#select-container {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+#selected-feature-display {
+  position: absolute;
+  top: 40px;
+  left: 400px;
+  color: black;    /* Set the text color */
+  background: yellow; /* Set the background color */
+  
+}
+
+.range-wrap {
+  position: relative;
+}
+
+.bubble {
+  position: absolute;
+  transform: translate(-70%, -70%);
+}
+
+#forestSelect {
+  position: absolute;
+  top: 0px;
+  left: 130px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+}
+
+#forestSelect option:checked {
+  background: #1c87c9;
+  color: #fff;
+}
+
+.legende-container {
+  position: absolute;
+  top: 0px;
+  left: 300px;
+  display: flex; /* Ajout de cette ligne */
+}
+
+.legende {
+  position: relative; /* Changé à relative */
+  left: 60px; /* Changé à 60px */
+  padding: 0px;
+  display: flex; /* Ajout de cette ligne */
+  flex-wrap: wrap; /* Ajout de cette ligne */
+}
+
+.legende-item {
+  padding: 5px;
+  color: white;
+  margin-bottom: 5px;
+  margin-right: 5px; /* Ajout de cette ligne */
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.button-selected {
+  background-color: green;
+  color: white;
+}
+
+.button-unselected {
+  background-color: white;
+  color: black;
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-lg {
+  max-width: 90%; 
+}
+

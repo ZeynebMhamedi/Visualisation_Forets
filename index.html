@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arbre_Groupes_Accuracy_Triés</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://unpkg.com/d3@5.16.0/dist/d3.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />  
+  <!-- Select2 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+</head>
+
+<body>
+  <p>Choisir une forêt :</p>
+  <select id="forestSelect">
+    <option value="" selected disabled>sélectionner</option>
+    <option value="iris">iris</option>
+    <option value="full_gea">full_gea</option>
+    <option value="full_geii">full_geii</option>
+    <option value="full_info">full_info</option>
+    <option value="full_icomco">full_icomco</option>
+    <option value="full_tcc">full_tcc</option>
+    <option value="full_tcn">full_tcn</option>
+  </select>
+  
+  <div class="scroll-container">
+    <svg id="arbre_svg"></svg>
+    <div class="legende-container">
+      <p>Classes:</p>
+      <div id="legende"></div>
+    </div>
+  </div>
+  <div id="select-container">
+    <label for="groupSelect">Choisir un groupe d'accuracy : </label>
+    <select id="groupSelect">
+      <option value="all">Tous les groupes</option>
+      <option value="group1">Groupe 1</option>
+      <option value="group2">Groupe 2</option>
+      <option value="group3">Groupe 3</option>
+    </select> 
+    <div id="features-container" style="display: flex; align-items: center; gap: 10px;">
+      <label for="FeatureSelect">Choisir une caractéristique : </label>
+      <select id="FeatureSelect">
+        <option value="">-- Choisir une caractéristique --</option>
+      </select>
+      <label for="numFeatures">Nombre de caractéristiques :</label>
+      <div class="range-wrap">
+        <input type="range" id="numFeatures" min="1">
+        <output class="bubble"></output>
+      </div>    
+      <div id="numFeaturesDisplay"></div>
+      <button id="bestButton">Meilleures</button>
+      <button id="worstButton">Pires</button>
+      <button id="allButton">Classement des caractéristiques</button>
+
+    </div>
+  </div>
+  <div id="selected-feature-display"></div>
+
+  <!-- Modale Bootstrap -->
+  <div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="featureModalLabel">Classement des caractéristiques dans l'ordre d'importance</h5>
+          <button type="button" class="btn btn-secondary" id="closeModalButton">Fermer</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Le contenu de la modale sera généré dynamiquement -->
+        </div>
+        <div class="modal-footer">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+    
+<script type="module" src="index.js"></script>
+<script src="bundle.js"></script>
+</body>
+</html>
